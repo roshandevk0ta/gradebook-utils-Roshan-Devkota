@@ -10,3 +10,10 @@ def test_average_empty():
     assert average([]) == 0.0
 def test_curve_basic():
     assert curve([70, 80, 90], 5) == [75, 85, 95]
+def test_curve_clamps_to_zero_on_negative_results():
+    # Penalize: some scores would go negative → clamp to 0
+    assert curve([10, 3, 0], -5) == [5, 0, 0]
+    # Already-negative inputs: small positive curve still clamps
+    assert curve([-2], 1) == [0]
+    # Positive curve still behaves as before
+    assert curve([70, 80, 90], 5) == [75, 85, 95]
