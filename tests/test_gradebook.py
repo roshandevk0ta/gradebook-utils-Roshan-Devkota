@@ -17,3 +17,5 @@ def test_curve_clamps_to_zero_on_negative_results():
     assert curve([-2], 1) == [0]
     # Positive curve still behaves as before
     assert curve([70, 80, 90], 5) == [75, 85, 95]
+    # If points to be curved are not allowed to be negative
+    assert curve([30, 40, 50], -5, False) == [30, 40, 50]
