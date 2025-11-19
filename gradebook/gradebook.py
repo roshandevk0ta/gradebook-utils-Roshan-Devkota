@@ -1,6 +1,6 @@
 # gradebook/gradebook.py
 """
-Gradebook utility functions for computing grades.
+Gradebook utility functions for operting grades (computing, sorting, etc.).
 """
 def average(scores):
     """Compute the average of a list of scores."""
